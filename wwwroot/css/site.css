@@ -1,0 +1,139 @@
+﻿
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+
+
+
+body {
+    background: url( https://img.freepik.com/free-vector/abstract-soft-brown-hand-painted-watercolor-pastel-background_1055-14336.jpg?w=900&t=st=1658947107~exp=1658947707~hmac=838a368b764708b837aeb9453307198969d33ef98f9287b10bbfea41f28f1b8c) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.jumbotron {
+    background: floralwhite;
+    opacity: 70%;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: "Montserrat";
+    font-size: large;
+}
+.jumbotron-fluid {
+    background-position: center;
+}
+
+table {
+    table-layout: fixed;
+    width: auto;
+    border-collapse: collapse;
+    border: 3px solid aliceblue;
+}
+carousel-inner {
+    position: relative;
+    text-align: center;
+    color: #343338;
+    opacity: 70%;
+}
+.carousel {
+   
+    opacity: 70%;
+    position: relative;
+    resize: vertical;
+    image: rounded;
+}
+
+div.carousel-caption {
+    background-color: floralwhite;
+    opacity: 70%;
+   
+}
+
+div.carousel-caption {
+    font-family: "Montserrat";
+    font-size: 40px;
+    color: black;
+    text-align: center;
+}
+
+h1, h3 {
+    color: #343338;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+
+p {
+    
+    font-size: 16px;
+    font-weight: 300;
+    color: #343338;
+}
+
+th {
+    color: #343338;
+    
+    font-size: small;
+}
+
+table, thead, th {
+    color: #343338;
+    font-size: small;
+}
+
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+
+
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+   
+}
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}

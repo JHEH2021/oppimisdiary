@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Oppimispäiväkirja_versio1.Models.Note>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section class="jumbotron">
+    <div class="text-center">
+        <h1 class="display-4">OPPIMISPÄIVÄKIRJA</h1>
+        <h3><em>Lisää aiheita, kirjoita muistiinpanoja ja seuraa edistymistäsi.</em></h3>
+    </div>
+</section>
+
+<p>
+    <a asp-action="Create">Kirjoita muistiinpano</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.TopicId)*@
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.NoteText)*@
+                Muistiinpano:
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TopicId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoteText)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Muokkaa</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Yksityiskohdat</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Poista</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

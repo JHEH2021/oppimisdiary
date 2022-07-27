@@ -1,0 +1,41 @@
+﻿@model Oppimispäiväkirja_versio1.Models.Note
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<section class="jumbotron">
+    <div class="text-center">
+        <h1 class="display-4">OPPIMISPÄIVÄKIRJA</h1>
+        <h3><em>Lisää aiheita, kirjoita muistiinpanoja ja seuraa edistymistäsi.</em></h3>
+    </div>
+</section>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="TopicId" class="control-label"></label>
+                <input asp-for="TopicId" class="form-control" />
+                <span asp-validation-for="TopicId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NoteText" class="control-label">Muistiinpano:</label>
+                <input asp-for="NoteText" class="form-control" />
+                <span asp-validation-for="NoteText" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Tallenna" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Takaisin listaan</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

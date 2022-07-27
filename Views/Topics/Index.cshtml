@@ -1,0 +1,97 @@
+﻿@model IEnumerable<Oppimispäiväkirja_versio1.Models.Topic>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<section class="jumbotron">
+    <div class="text-center">
+        <h1 class="display-4">OPPIMISPÄIVÄKIRJA</h1>
+        <h3><em>Lisää aiheita, kirjoita muistiinpanoja ja seuraa edistymistäsi.</em></h3>
+    </div>
+</section>
+    <div class="container">
+        <div class="text-center">
+            <p>
+                <a asp-action="Create">Aloita uusi aihe</a>
+            </p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.Title)*@
+                            Otsikko
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.Description)*@
+                            Kuvaus
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.EstimatedTimeToMaster)*@
+                            Työmäärä tunneissa
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.TimeSpent)*@
+                            Aikaa käytetty
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.Source)*@
+                            Lähdemateriaali
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.StartLearningDate)*@
+                            Aloituspäivä
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.InProgress)*@
+                            Opiskelu kesken
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.CompletionDate)*@
+                            Lopetuspäivä
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EstimatedTimeToMaster)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TimeSpent)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Source)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.StartLearningDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.InProgress)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CompletionDate)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Id">Muokkaa</a> |
+                                <a asp-action="Details" asp-route-id="@item.Id">Yksityiskohdat</a> |
+                                <a asp-action="Delete" asp-route-id="@item.Id">Poista</a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
