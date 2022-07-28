@@ -6,6 +6,7 @@
     <title>@ViewData["Title"] - Oppimispäiväkirja_versio1</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="style.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -14,7 +15,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="logo.jpg" alt="logo" style="height:50px; width: 75px"  /></a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="/images/logo.jpg" alt="logo" style="height:50px; width: 75px" /></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -30,25 +31,29 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Notes" asp-action="Index">KIRJOITA MUISTIINPANO</a>
                         </li>
+                        <li class="nav-item">
+                            <button class="btn btn-info" onclick="annaOhjeita()">Tarvitseko apua?</button>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-        <div class="container">
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
-        </div>
-   <section>
-       <div></div>
-   </section>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <section>
+        <div></div>
+    </section>
 
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2022 - Oppimispäiväkirja - <a asp-area="" asp-controller="Home"></a>
         </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

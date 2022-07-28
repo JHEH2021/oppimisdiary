@@ -85,8 +85,8 @@ table, thead, th {
 }
 
 
-footer {
-    position: absolute;
+.footer {
+    position: relative;
     bottom: 0;
     width: 100%;
     white-space: nowrap;
@@ -129,8 +129,7 @@ button.accept-policy {
     line-height: inherit;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
+
 html {
     position: relative;
     min-height: 100%;
