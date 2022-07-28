@@ -7,25 +7,23 @@ a.navbar-brand {
     word-break: break-all;
 }
 
-
-
-
 body {
     background: url( https://img.freepik.com/free-vector/abstract-soft-brown-hand-painted-watercolor-pastel-background_1055-14336.jpg?w=900&t=st=1658947107~exp=1658947707~hmac=838a368b764708b837aeb9453307198969d33ef98f9287b10bbfea41f28f1b8c) no-repeat center center fixed;
     background-size: cover;
 }
-
 .jumbotron {
-    background: floralwhite;
-    opacity: 70%;
-    background-size: auto;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-color: floralwhite;
+    /*opacity: 70%;*/
     font-family: "Montserrat";
     font-size: large;
+    color: black;
 }
+
+
+    
 .jumbotron-fluid {
     background-position: center;
+    
 }
 
 table {
@@ -34,18 +32,12 @@ table {
     border-collapse: collapse;
     border: 3px solid floralwhite;
 }
-.carousel-inner {
-    position: relative;
-    text-align: center;
-    color: #343338;
-    opacity: 70%;
-}
-.carousel {
-   
-    opacity: 70%;
-    position: center;
-    resize: vertical;
-    border-radius: ;
+
+
+.carousel.inner {
+   object-fit: none;
+   object-position: center;
+   overflow: hidden;
 }
 
 div.carousel-caption {
@@ -75,7 +67,6 @@ p {
 
 th {
     color: #343338;
-    
     font-size: small;
 }
 
