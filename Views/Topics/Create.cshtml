@@ -15,25 +15,25 @@
             <div class="col-md-4">
                 <form asp-action="Create">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="form-group" >
+                    <div class="form-group">
                         <label asp-for="Title" class="control-label">Otsikko</label>
                         <input asp-for="Title" class="form-control" />
                         <span asp-validation-for="Title" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="Description" class="control-label" >Kuvaus</label>
+                        <label asp-for="Description" class="control-label">Kuvaus</label>
                         <input asp-for="Description" class="form-control" />
                         <span asp-validation-for="Description" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="EstimatedTimeToMaster" class="control-label" >Arvio kestosta tunteina</label>
-                        <input asp-for="EstimatedTimeToMaster" class="form-control" >
+                        <label asp-for="EstimatedTimeToMaster" class="control-label">Arvio kestosta tunteina</label>
+                        <input asp-for="EstimatedTimeToMaster" class="form-control">
                         <span asp-validation-for="EstimatedTimeToMaster" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="TimeSpent" class="control-label">Aikaa kulunut</label>
-                        <input asp-for="TimeSpent" class="form-control"/>
-                        <span asp-validation-for="TimeSpent" class="text-danger" ></span>
+                        <input asp-for="TimeSpent" class="form-control" />
+                        <span asp-validation-for="TimeSpent" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="Source" class="control-label">Lähdemateriaali</label>
@@ -41,13 +41,13 @@
                         <span asp-validation-for="Source" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="StartLearningDate" class="control-label" >Aloituspäivä</label>
+                        <label asp-for="StartLearningDate" class="control-label">Aloituspäivä</label>
                         <input asp-for="StartLearningDate" class="form-control" />
                         <span asp-validation-for="StartLearningDate" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="InProgress" class="control-label">Projekti kesken</label>
-                        <input asp-for="InProgress" class="form-control"/>
+                        <input asp-for="InProgress" class="form-control" />
                         <span asp-validation-for="InProgress" class="text-danger"></span>
                     </div>
                     <div class="form-group">
@@ -62,11 +62,10 @@
             </div>
         </div>
     </div>
+    <div>
+        <a asp-action="Index">Takaisin listaan</a>
+    </div>
 </section>
-
-<div>
-    <a asp-action="Index">Takaisin listaan</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

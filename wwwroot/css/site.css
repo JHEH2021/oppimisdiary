@@ -32,9 +32,9 @@ table {
     table-layout: fixed;
     width: auto;
     border-collapse: collapse;
-    border: 3px solid aliceblue;
+    border: 3px solid floralwhite;
 }
-carousel-inner {
+.carousel-inner {
     position: relative;
     text-align: center;
     color: #343338;
@@ -43,23 +43,21 @@ carousel-inner {
 .carousel {
    
     opacity: 70%;
-    position: relative;
+    position: center;
     resize: vertical;
-    image: rounded;
+    border-radius: ;
 }
 
 div.carousel-caption {
     background-color: floralwhite;
-    opacity: 70%;
-   
-}
-
-div.carousel-caption {
+    position: center;
+    text-align: center;
     font-family: "Montserrat";
     font-size: 40px;
     color: black;
     text-align: center;
 }
+
 
 h1, h3 {
     color: #343338;
@@ -87,7 +85,7 @@ table, thead, th {
 }
 
 
-.footer {
+footer {
     position: absolute;
     bottom: 0;
     width: 100%;
