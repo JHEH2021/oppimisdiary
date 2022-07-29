@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Oppimispäiväkirja_versio1.Models.Topic>
+@{
+    ViewData["Title"] = "ViewJoku";
+}
+
+<h1>ViewJoku</h1>
+
+@foreach (var item in Model)
+{
+    @item.Title;
+}
