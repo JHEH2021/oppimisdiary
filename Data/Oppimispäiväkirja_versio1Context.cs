@@ -15,4 +15,6 @@ using Oppimispäiväkirja_versio1.Models;
         public DbSet<Oppimispäiväkirja_versio1.Models.Topic> Topic { get; set; }
 
         public DbSet<Oppimispäiväkirja_versio1.Models.Note> Note { get; set; }
+
+        public DbSet<Oppimispäiväkirja_versio1.Models.ToDo> ToDo { get; set; }
     }
