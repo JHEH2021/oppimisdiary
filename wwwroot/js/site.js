@@ -12,8 +12,33 @@ poistaNappi.addEventListener('submit', (event) =>  {
     }
 });
 
+$(document).ready(function () {
+	$('.form-control').bind("mouseover", function () {
+		var color = $(this).css("background-color");
+
+		$(this).css("background", "lightgray");
+
+		$(this).bind("mouseout", function () {
+			$(this).css("background", color);
+		})
+	})
+})
+
+
+$(document).ready(function () {
+	$('tr').bind("mouseover", function () {
+		var color = $(this).css("background-color");
+
+		$(this).css("background", "lightgray");
+
+		$(this).bind("mouseout", function () {
+			$(this).css("background", color);
+		})
+	})
+})
+
 function annaOhjeita() {
-    alert("Tällä sivuilla voit seurata oppimistasi ja asettaa tavoiteita. \nALOITA UUSI AIHE: voit syöttää lomakkeelle sen pyytämiä tietoja ja tallentaa ne. \nVoit myös palata tarkistamaan ja muokkaamaan niitä myöhemmin. \nKIRJOITA MUISTIINPANO: voi lisätä matkan varrella ideoitasi ja ajatuksiasi liittyen jonkin aiheen opiskeluun.");
+    alert("Tällä sivuilla voit seurata oppimistasi ja asettaa tavoiteita. \nALOITA UUSI AIHE: voit syöttää lomakkeelle sen pyytämiä tietoja ja tallentaa ne. \nVoit myös palata tarkistamaan ja muokkaamaan niitä myöhemmin. \nKIRJOITA MUISTIINPANO: voi lisätä matkan varrella ideoitasi ja ajatuksiasi liittyen jonkin aiheen opiskeluun. \nTO DO: voit listata asioita, jotka täytyy tehdä seuraavaksi.");
 }
 
 $(document).ready(function () {
@@ -28,7 +53,7 @@ $(document).ready(function () {
 			$('#text').val("");
 		} else alert("Enter some Text!");
 	});
-	// When Task is clicked
+	// kun to do taskia klikataan
 	$(document).on('click', '.alert', function () {
 		if ($(this).css('text-decoration-line') == "none")
 			$(this).css('text-decoration-line', 'line-through');
