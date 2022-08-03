@@ -10,38 +10,42 @@
         <h3><em>Lisää aiheita, kirjoita muistiinpanoja ja seuraa edistymistäsi.</em></h3>
     </div>
 </section>
+<div class="container">
+    <div class="text-left">
+        <p>
+            <a asp-action="Create" class="btn btn-light" button style='font-size:18px'>Kirjoita uusi muistiinpano<i class='fas fa-cat'></i></a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.TopicId)*@
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.NoteText)*@
 
-<p>
-    <a asp-action="Create">Kirjoita muistiinpano</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @*@Html.DisplayNameFor(model => model.TopicId)*@
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.NoteText)*@
-
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TopicId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NoteText)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id"><i class="material-icons">&#xe3c9;</i></a> |
-                <a asp-action="Details" asp-route-id="@item.Id"><i class="material-icons">&#xe8a5;</i></a> |
-                <a asp-action="Delete" asp-route-id="@item.Id"><i class="material-icons">&#xe16c;</i></a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TopicId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NoteText)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id"><i class="material-icons">&#xe3c9;</i></a> |
+                            <a asp-action="Details" asp-route-id="@item.Id"><i class="material-icons">&#xe8a5;</i></a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id"><i class="material-icons">&#xe16c;</i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+      </div>
+</div>

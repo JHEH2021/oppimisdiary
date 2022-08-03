@@ -11,6 +11,8 @@ namespace Oppimispäiväkirja_versio1.Models
         public int TopicId { get; set; }
         public string NoteText { get; set; }
 
+        
+
         public Note()
         {
 

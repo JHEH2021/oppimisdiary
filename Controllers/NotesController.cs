@@ -152,15 +152,7 @@ namespace Oppimispäiväkirja_versio1.Controllers
         {
            return View(await _context.Topic.ToListAsync());
         }
-        //public async Task<IActionResult> ViewJoku()
-        //{
-        //    var topics = await _context.Topic.ToListAsync();
-        //    if (topics != null)
-        //    {
-        //        ViewBag.data = topics;
-        //    }
 
-        //    return View(await _context.Topic.ToListAsync());
-        //}
+
     }
 }

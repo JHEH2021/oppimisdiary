@@ -17,6 +17,7 @@ namespace Oppimispäiväkirja_versio1.Models
 		public bool InProgress { get; set; }
 		public DateTime? CompletionDate { get; set; }
 
+
 		public Topic()
         {
 
