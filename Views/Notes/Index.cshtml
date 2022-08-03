@@ -10,20 +10,17 @@
         <h3><em>Lisää aiheita, kirjoita muistiinpanoja ja seuraa edistymistäsi.</em></h3>
     </div>
 </section>
-<div class="container">
+<div class="container-fluid">
     <div class="text-left">
         <p>
-            <a asp-action="Create" class="btn btn-light" button style='font-size:18px'>Kirjoita uusi muistiinpano<i class='fas fa-cat'></i></a>
+            <a asp-action="Create" class="btn btn-light"  button style='font-size:18px; background-color: peachpuff'>Kirjoita uusi muistiinpano<i class='fas fa-cat'></i></a>
         </p>
         <table class="table">
             <thead>
                 <tr>
                     <th>
-                        @*@Html.DisplayNameFor(model => model.TopicId)*@
-                    </th>
-                    <th>
                         @*@Html.DisplayNameFor(model => model.NoteText)*@
-
+                        Muistiinpano:
                     </th>
                     <th></th>
                 </tr>
@@ -32,9 +29,6 @@
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.TopicId)
-                        </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.NoteText)
                         </td>

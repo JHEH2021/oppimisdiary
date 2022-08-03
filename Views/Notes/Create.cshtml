@@ -4,6 +4,7 @@
     ViewData["Title"] = "Create";
 }
 
+
 <section class="jumbotron">
     <div class="text-center">
         <h1 class="display-4">OPPIMISPÄIVÄKIRJA</h1>
@@ -17,20 +18,20 @@
                 <form asp-action="Create">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
-                            <label asp-for="TopicId" class="control-label">
-                                <div class="dropdown show">
-                                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Dropdown link
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
+                        <label asp-for="Topic.Title" class="control-label">
+                            <div class="dropdown show">
+                                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Valitse aihe
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Action</a>
+
                                 </div>
+                            </div>
                         </label>
-                        <input asp-for="TopicId" class="form-control" />
-                        <span asp-validation-for="TopicId" class="text-danger"></span>
+                        <input asp-for="Topic.Title" asp-iclass="form-control" />
+                        <span asp-validation-for="Topic.Title" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="NoteText" class="control-label">Muistiinpano:</label>
@@ -38,16 +39,16 @@
                         <span asp-validation-for="NoteText" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Tallenna" class="btn btn-primary" />
+                        <input type="submit" value="Tallenna" class="btn btn-primary"/>
                     </div>
                 </form>
             </div>
         </div>
-    </div>
-    </div>
-    </div>
-    <div>
-        <a asp-action="Index">Takaisin listaan</a>
+        <div class="page-item">
+            <p>
+                <a asp-action="Index" class="btn btn-light" button style='font-size:18px; background-color: peachpuff'>Takaisin listaan<i class='fas fa-cat'></i></a>
+            </p>
+        </div>
     </div>
 </section>
 

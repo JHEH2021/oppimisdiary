@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Oppimispäiväkirja_versio1.Models;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace Oppimispäiväkirja_versio1.Controllers
 {
@@ -152,7 +154,6 @@ namespace Oppimispäiväkirja_versio1.Controllers
         {
            return View(await _context.Topic.ToListAsync());
         }
-
 
     }
 }

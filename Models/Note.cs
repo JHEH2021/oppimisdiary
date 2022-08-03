@@ -8,10 +8,8 @@ namespace Oppimispäiväkirja_versio1.Models
     public class Note
     {
         public int Id { get; set; }
-        public int TopicId { get; set; }
         public string NoteText { get; set; }
-
-        
+        public Topic Topic { get; set; }
 
         public Note()
         {
@@ -20,4 +18,7 @@ namespace Oppimispäiväkirja_versio1.Models
 
 
     }
+  
+
+  
 }

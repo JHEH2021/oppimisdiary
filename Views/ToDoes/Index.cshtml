@@ -10,19 +10,21 @@
         <h3><em>Lisää aiheita, kirjoita muistiinpanoja ja seuraa edistymistäsi.</em></h3>
     </div>
 </section>
-<div class="container">
+<div class="container-fluid">
     <div class="text-left">
         <p>
-            <a asp-action="Create" class="btn btn-light" button style='font-size:18px'>Luo uusi To Do -lista<i class='fas fa-cat'></i></a>
+            <a asp-action="Create" class="btn btn-light" button style='font-size:18px; background-color: peachpuff'>Luo uusi To Do -lista<i class='fas fa-cat'></i></a>
         </p>
         <table class="table" >
             <thead>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.Description)
+                        @*@Html.DisplayNameFor(model => model.Description)*@
+                        Aiheen kuvaus
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.IsDone)
+                        @*@Html.DisplayNameFor(model => model.IsDone)*@
+                        Valmis
                     </th>
                     <th></th>
                 </tr>

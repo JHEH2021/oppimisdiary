@@ -25,6 +25,10 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.Id"><i class="material-icons">&#xe3c9;</i></a> |
+         <div class="page-item">
+            <p>
+                <a asp-action="Index" class="btn btn-light" >Takaisin listaan<i class='fas fa-cat'></i></a>
+            </p>
+        </div>
 </div>

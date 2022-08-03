@@ -27,7 +27,11 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Poista" class="btn btn-danger" /> |
+        <div class="page-item">
+            <p>
+                <a asp-action="Index" class="btn btn-light" button style='font-size:18px; background-color: peachpuff'>Takaisin listaan<i class='fas fa-cat'></i></a>
+            </p>
+        </div>
     </form>
 </div>

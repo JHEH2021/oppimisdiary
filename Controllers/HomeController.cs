@@ -4,8 +4,11 @@ using Oppimispäiväkirja_versio1.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
+
 
 namespace Oppimispäiväkirja_versio1.Controllers
 {
@@ -33,6 +36,7 @@ namespace Oppimispäiväkirja_versio1.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
-        
+
 }

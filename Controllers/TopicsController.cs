@@ -42,6 +42,22 @@ namespace Oppimispäiväkirja_versio1.Controllers
             return View(topic);
         }
 
+
+        //public async Task<IActionResult> Search(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    var topic = await from t in _context.Topic
+        //                where t.Title.Contains(userInput)
+        //                select t;
+        //    return Json(topic.ToList());
+        //}
+   
+
+
         // GET: Topics/Create
         public IActionResult Create()
         {
