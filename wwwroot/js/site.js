@@ -12,7 +12,7 @@ poistaNappi.addEventListener('submit', (event) =>  {
     }
 });
 
-//tämä ei ole optimitapa varmaan tehdä tätä, koska edellyttäisi että luon uniikit id:t vähän joka kohtaan tai jotain sellaista.. 
+
 function changeBackground(id, color) {
 
     document.getElementById(id).style.background = color;

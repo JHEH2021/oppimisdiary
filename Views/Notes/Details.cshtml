@@ -10,25 +10,43 @@
         <h3><em>Lisää aiheita, kirjoita muistiinpanoja ja seuraa edistymistäsi.</em></h3>
     </div>
 </section>
-
-<div>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Topic.Id)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Topic.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NoteText)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NoteText)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Muokkaa</a> |
-    <a asp-action="Index">Takaisin listaan</a>
-</div>
+<section class="container-fluid">
+    <div class="text-center">
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Topic.Title)
+                            Otsikko
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NoteText)
+                            Muistiinpano:
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => model.Topic.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.NoteText)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <div>
+                <a asp-action="Edit" asp-route-id="@Model.Id"><i class="material-icons">&#xe3c9;</i></a>
+                <div><br /></div>
+                <p>
+                    <a asp-action="Index" class="btn btn-light" button style='font-size: 18px; background-color: peachpuff'>Takaisin listaan<i class='fas fa-cat'></i></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

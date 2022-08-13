@@ -9,32 +9,37 @@
         <h3><em>Lisää aiheita, kirjoita muistiinpanoja ja seuraa edistymistäsi.</em></h3>
     </div>
 </section>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Topic.Id" class="control-label"></label>
-                <input asp-for="Topic.Id" class="form-control" />
-                <span asp-validation-for="Topic.Id" class="text-danger"></span>
+<section class="container-fluid">
+    <div class="text-center">
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="form-group">
+                        <label asp-for="Topic.Title" class="control-label">Otsikko:</label>
+                        <input asp-for="Topic.Title" class="form-control" />
+                        <span asp-validation-for="Topic.Id" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="NoteText" class="control-label">Muistiinpano:</label>
+                        <input asp-for="NoteText" class="form-control" />
+                        <span asp-validation-for="NoteText" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Tallenna" class="btn btn-primary" />
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="NoteText" class="control-label">Muistiinpano:</label>
-                <input asp-for="NoteText" class="form-control" />
-                <span asp-validation-for="NoteText" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Tallenna" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
+        <div class="page-item">
+            <p>
+                <a asp-action="Index" class="btn btn-light" button style='font-size:18px;'>Takaisin listaan<i class='fas fa-cat'></i></a>
+            </p>
+        </div>
     </div>
-</div>
+</section>
 
-<div>
-    <a asp-action="Index">Takaisin listaan</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

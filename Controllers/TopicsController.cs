@@ -21,8 +21,23 @@ namespace Oppimispäiväkirja_versio1.Controllers
         // GET: Topics
         public async Task<IActionResult> Index()
         {
+            
             return View(await _context.Topic.ToListAsync());
         }
+
+        public ActionResult IndexSearch(string searchString)
+        {
+            var title = from m in _context.Topic
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                title = title.Where(s => s.Title.Contains(searchString));
+            }
+
+            return View(title);
+        }
+        
 
         // GET: Topics/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -38,6 +53,7 @@ namespace Oppimispäiväkirja_versio1.Controllers
             {
                 return NotFound();
             }
+
 
             return View(topic);
         }
@@ -94,6 +110,20 @@ namespace Oppimispäiväkirja_versio1.Controllers
                 return NotFound();
             }
             return View(topic);
+        }
+
+        public async Task<IActionResult> FindTitle(string title)
+        {
+            if (title == null)
+            {
+                return NotFound();
+            }
+            var topic = await _context.Topic.FindAsync(title);
+            if (topic == null)
+            {
+                return NotFound();
+            }
+            return View(title);
         }
 
         // POST: Topics/Edit/5

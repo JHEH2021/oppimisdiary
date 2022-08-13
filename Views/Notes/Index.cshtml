@@ -13,11 +13,16 @@
 <div class="container-fluid">
     <div class="text-left">
         <p>
-            <a asp-action="Create" class="btn btn-light"  button style='font-size:18px; background-color: peachpuff'>Kirjoita uusi muistiinpano<i class='fas fa-cat'></i></a>
+            <br/>
+            <a asp-action="Create" class="btn btn-light" button style='font-size: 18px'>Kirjoita uusi muistiinpano<i class='fas fa-cat'></i></a>
         </p>
         <table class="table">
             <thead>
                 <tr>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.Topic.Title)*@
+                       Aiheen otsikko:
+                    </th>
                     <th>
                         @*@Html.DisplayNameFor(model => model.NoteText)*@
                         Muistiinpano:
@@ -28,16 +33,19 @@
             <tbody>
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.NoteText)
-                        </td>
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.Id"><i class="material-icons">&#xe3c9;</i></a> |
-                            <a asp-action="Details" asp-route-id="@item.Id"><i class="material-icons">&#xe8a5;</i></a> |
-                            <a asp-action="Delete" asp-route-id="@item.Id"><i class="material-icons">&#xe16c;</i></a>
-                        </td>
-                    </tr>
+                <tr>
+                    <td class="col-sm-10">
+                        @Html.DisplayFor(modelitem => item.Topic.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NoteText)
+                    </td>
+                    <td>
+                        <a class="bs-tooltip-top" title="Muokkaa" asp-action="Edit" asp-route-id="@item.Id"><i class="material-icons">&#xe3c9;</i></a>  |
+                        <a class="bs-tooltip-top" title="Detaljit" asp-action="Details" asp-route-id="@item.Id"><i class="material-icons">&#xe8a5;</i></a>  |
+                        <a class="bs-tooltip-top" title="Poista" asp-action="Delete" asp-route-id="@item.Id"><i class="material-icons">&#xe92b;</i></a>  
+                    </td>
+                </tr>
                 }
             </tbody>
         </table>

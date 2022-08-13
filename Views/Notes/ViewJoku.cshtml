@@ -1,15 +1,18 @@
-﻿@model IEnumerable<Oppimispäiväkirja_versio1.Models.Topic>
+﻿@using Microsoft.EntityFrameworkCore.Infrastructure
+@model IEnumerable<Oppimispäiväkirja_versio1.Models.Topic>
+
 @{
     ViewData["Title"] = "ViewJoku";
 }
-
-
-<h1>ViewJoku</h1>
 
 
 @foreach (var item in Model)
 {
     @item.Title;
 }
-
-
+<form id="myForm">
+    <label for="titlesDropdown"><b>Otsikko</b></label>
+    <select class="form-control" id="titlesDropdown" name="titlesDropdown">
+     
+    </select>
+</form>

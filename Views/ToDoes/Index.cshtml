@@ -10,41 +10,48 @@
         <h3><em>Lisää aiheita, kirjoita muistiinpanoja ja seuraa edistymistäsi.</em></h3>
     </div>
 </section>
+<section>
 <div class="container-fluid">
     <div class="text-left">
         <p>
-            <a asp-action="Create" class="btn btn-light" button style='font-size:18px; background-color: peachpuff'>Luo uusi To Do -lista<i class='fas fa-cat'></i></a>
+            <br/>
+            <a asp-action="Create" class="btn btn-light" button style='font-size: 18px'>Luo uusi To Do -lista<i class='fas fa-cat'></i></a>
         </p>
-        <table class="table" >
-            <thead>
-                <tr>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.Description)*@
-                        Aiheen kuvaus
-                    </th>
-                    <th>
-                        @*@Html.DisplayNameFor(model => model.IsDone)*@
-                        Valmis
-                    </th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Description)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.IsDone)
-                        </td>
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.Id"><i class="material-icons">&#xe3c9;</i></a> |
-                            <a asp-action="Details" asp-route-id="@item.Id"><i class="material-icons">&#xe8a5;</i></a> |
-                            <a asp-action="Delete" asp-route-id="@item.Id"><i class="material-icons">&#xe16c;</i></a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+    <table class="table" >
+        <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Description)*@
+                Aiheen kuvaus
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.IsDone)*@
+                Valmis
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsDone)
+                </td>
+                <td>
+                    <a class="bs-tooltip-top" title="Muokkaa" asp-action="Edit" asp-route-id="@item.Id"><i class="material-icons">&#xe3c9;</i></a>  |
+                    <a class="bs-tooltip-top" title="Detaljit" asp-action="Details" asp-route-id="@item.Id"><i class="material-icons">&#xe8a5;</i></a>  |
+                    <a class="bs-tooltip-top" title="Poista" asp-action="Delete" asp-route-id="@item.Id"><i class="material-icons">&#xe92b;</i></a>  
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    </div>
+</div>
+</section>
+
+    

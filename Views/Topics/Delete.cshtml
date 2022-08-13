@@ -9,71 +9,95 @@
         <h3><em>Lisää aiheita, kirjoita muistiinpanoja ja seuraa edistymistäsi.</em></h3>
     </div>
 </section>
-<section>
-        <div class="container-fluid">
-            <div class="text-center">
-                <div class="row">
-                    <div class="col-md-4">
-                        <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.Title)
-                        </dt>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Title)
-                        </dd>
-                        <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.Description)
-                        </dt>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Description)
-                        </dd>
-                        <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.EstimatedTimeToMaster)
-                        </dt>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.EstimatedTimeToMaster)
-                        </dd>
-                        <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.TimeSpent)
-                        </dt>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.TimeSpent)
-                        </dd>
-                        <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.Source)
-                        </dt>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Source)
-                        </dd>
-                        <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.StartLearningDate)
-                        </dt>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.StartLearningDate)
-                        </dd>
-                        <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.InProgress)
-                        </dt>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.InProgress)
-                        </dd>
-                        <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.CompletionDate)
-                        </dt>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.CompletionDate)
-                        </dd>
-                        <form asp-action="Delete" id="delete">
-                            <input id="Id" type="hidden" asp-for="Id" />
-                            <input type="submit" value="Poista" class="btn btn-danger" />
-                        </form>
-                    </div>
-                    <div class="page-item">
-                        <p>
-                            <a asp-action="Index" class="btn btn-light" button style='font-size:18px; background-color: peachpuff'>Takaisin listaan<i class='fas fa-cat'></i></a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+<section class="container-fluid">
+    <div class="text-center">
+        <div class="row">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.Title)*@
+                        Otsikko
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.Description)*@
+                        Kuvaus
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.EstimatedTimeToMaster)*@
+                        Työmäärä tunneissa
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.TimeSpent)*@
+                        Aikaa käytetty
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.Source)*@
+                        Lähdemateriaali
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.StartLearningDate)*@
+                        Aloituspäivä
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.InProgress)*@
+                        Opiskelu kesken
+                    </th>
+                    <th>
+                        @*@Html.DisplayNameFor(model => model.CompletionDate)*@
+                        Lopetuspäivä
+                    </th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => model.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.EstimatedTimeToMaster)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.TimeSpent)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Source)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.StartLearningDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.InProgress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.CompletionDate)
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
-  </section>
+        <div>
+            <form asp-action="Delete" id="delete">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="Poista" class="btn btn-danger" /> 
+            </form>
+        </div>
+        <div><p></p></div>
+        <div>
+            <div class="page-item">
+                <p>
+                    <a asp-action="Index" class="btn btn-light" button style="font-size:18px;">Takaisin listaan<i class='fas fa-cat'></i></a>
+                    <br/>
+                </p>
+            </div>
+            <br/>
+        </div>
+        </div>
+    <div>
+    </div>
+</section>
 

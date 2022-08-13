@@ -3,17 +3,20 @@
 @{
     ViewData["Title"] = "Index";
 }
+
+
 <section class="jumbotron">
     <div class="text-center">
         <h1 class="display-4">OPPIMISPÄIVÄKIRJA</h1>
         <h3><em>Lisää aiheita, kirjoita muistiinpanoja ja seuraa edistymistäsi.</em></h3>
-    </div>
+        </div>
 </section>
 <section>
     <div class="container-fluid">
         <div class="text-left">
             <p>
-                <a asp-action="Create" class="btn btn-light" button style='font-size:18px; background-color: peachpuff'>Aloita uusi aihe<i class='fas fa-cat'></i></a>
+                <br/>
+                <a asp-action="Create" class="btn btn-light" button style="font-size: 18px">Aloita uusi aihe<i class='fas fa-cat'></i></a>
             </p>
             <div class="table">
                 <table class="table">
@@ -32,9 +35,9 @@
                                 Työmäärä tunneissa
                             </th>
                             <!--<th>-->
-                                @*@Html.DisplayNameFor(model => model.TimeSpent)*@
-                                <!--Aikaa käytetty
-                            </th>-->
+                            @*@Html.DisplayNameFor(model => model.TimeSpent)*@
+                            <!--Aikaa käytetty
+                    </th>-->
                             <th>
                                 @*@Html.DisplayNameFor(model => model.Source)*@
                                 Lähdemateriaali
@@ -65,8 +68,8 @@
                                     @Html.DisplayFor(modelItem => item.Description)
                                 </td>
                                 @*<td>
-                                    @Html.DisplayFor(modelItem => item.EstimatedTimeToMaster)
-                                </td>*@
+                                @Html.DisplayFor(modelItem => item.EstimatedTimeToMaster)
+                            </td>*@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.TimeSpent)
                                 </td>
@@ -82,10 +85,16 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.CompletionDate)
                                 </td>
-                                <td >
-                                    <a asp-action="Edit" asp-route-id="@item.Id"><i class="material-icons">&#xe3c9;</i></a> |
-                                    <a asp-action="Details" asp-route-id="@item.Id"><i class="material-icons">&#xe8a5;</i></a> |
-                                    <a asp-action="Delete" asp-route-id="@item.Id"><i class="material-icons">&#xe16c;</i></a>
+                                <td>
+                                    <a class="bs-tooltip-top" title="Muokkaa" asp-action="Edit" asp-route-id="@item.Id"><i class="material-icons">&#xe3c9;</i></a>  |
+                                    <a class="bs-tooltip-top" title="Detaljit" asp-action="Details" asp-route-id="@item.Id"><i class="material-icons">&#xe8a5;</i></a>  |
+                                    <a class="bs-tooltip-top" title="Poista" asp-action="Delete" asp-route-id="@item.Id"><i class="material-icons">&#xe92b;</i></a>  
+
+                                    @*<a asp-action="Edit" asp-route-id="@item.Id">
+            <i class="material-icons">&#xe3c9;</i>
+        </a> |*@
+                                    @*<a asp-action="Details" asp-route-id="@item.Id"><i class="material-icons">&#xe8a5;</i></a> |
+                                    <a asp-action="Delete" asp-route-id="@item.Id"><i class="material-icons">&#xe92b;</i></a>*@
                                 </td>
                             </tr>
                         }
@@ -96,7 +105,6 @@
         </div>
     </div>
 </section>
-   
 
 
 

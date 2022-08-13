@@ -87,7 +87,7 @@ namespace Oppimispäiväkirja_versio1.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TopicId,NoteText")] Note note)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,NoteText,Topic")] Note note)
         {
             if (id != note.Id)
             {
@@ -152,8 +152,10 @@ namespace Oppimispäiväkirja_versio1.Controllers
         }
         public async Task<IActionResult> ViewJoku()
         {
+          
            return View(await _context.Topic.ToListAsync());
         }
+
 
     }
 }

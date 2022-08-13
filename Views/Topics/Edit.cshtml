@@ -10,69 +10,67 @@
         <h3><em>Lisää aiheita, kirjoita muistiinpanoja ja seuraa edistymistäsi.</em></h3>
     </div>
 </section>
-<section>
-    <div class="container-fluid">
-        <div class="text-center">
+<section class="container-fluid">
+    <div class="text-center">
+        <div class="row">
             <div class="col-md-4">
-                <div class="row">
-                    <form asp-action="Edit">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                        <input type="hidden" asp-for="Id" />
-                        <div class="form-group">
-                            <label asp-for="Title" class="control-label">Otsikko</label>
-                            <input asp-for="Title" class="form-control" />
-                            <span asp-validation-for="Title" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Description" class="control-label">Kuvaus</label>
-                            <input asp-for="Description" class="form-control" />
-                            <span asp-validation-for="Description" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="EstimatedTimeToMaster" class="control-label">Arvio kestosta tunteina</label>
-                            <input asp-for="EstimatedTimeToMaster" class="form-control" />
-                            <span asp-validation-for="EstimatedTimeToMaster" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="TimeSpent" class="control-label">Aikaa käytetty</label>
-                            <input asp-for="TimeSpent" class="form-control" />
-                            <span asp-validation-for="TimeSpent" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Source" class="control-label">Lähdemateriaali</label>
-                            <input asp-for="Source" class="form-control" />
-                            <span asp-validation-for="Source" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="StartLearningDate" class="control-label">Aloituspäivä</label>
-                            <input asp-for="StartLearningDate" class="form-control" />
-                            <span asp-validation-for="StartLearningDate" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="InProgress" class="control-label">Projekti kesken</label>
-                            <input asp-for="InProgress" class="form-control" />
-                            <span asp-validation-for="InProgress" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="CompletionDate" class="control-label">Lopetuspäivä</label>
-                            <input asp-for="CompletionDate" class="form-control" />
-                            <span asp-validation-for="CompletionDate" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Tallenna" class="btn btn-primary" />
-                        </div>
-                    </form>
-
-                </div>
-                <div class="page-item">
-                    <p>
-                        <a asp-action="Index" class="btn btn-light" button style='font-size:18px; background-color: peachpuff'>Takaisin listaan<i class='fas fa-cat'></i></a>
-                    </p>
-                </div>
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="form-group">
+                        <label asp-for="Title" class="control-label">Otsikko</label>
+                        <input asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label">Kuvaus</label>
+                        <input asp-for="Description" class="form-control" />
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EstimatedTimeToMaster" class="control-label">Arvio kestosta tunteina</label>
+                        <input asp-for="EstimatedTimeToMaster" class="form-control" />
+                        <span asp-validation-for="EstimatedTimeToMaster" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TimeSpent" class="control-label">Aikaa käytetty</label>
+                        <input asp-for="TimeSpent" class="form-control" />
+                        <span asp-validation-for="TimeSpent" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Source" class="control-label">Lähdemateriaali</label>
+                        <input asp-for="Source" class="form-control" />
+                        <span asp-validation-for="Source" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="StartLearningDate" class="control-label">Aloituspäivä</label>
+                        <input asp-for="StartLearningDate" class="form-control" />
+                        <span asp-validation-for="StartLearningDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="InProgress" class="control-label">Projekti kesken</label>
+                        <input asp-for="InProgress" class="form-control" />
+                        <span asp-validation-for="InProgress" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CompletionDate" class="control-label">Lopetuspäivä</label>
+                        <input asp-for="CompletionDate" class="form-control" />
+                        <span asp-validation-for="CompletionDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Tallenna" class="btn btn-primary" />
+                    </div>
+                </form>
             </div>
         </div>
+        <div class="page-item">
+            <p>
+                <a asp-action="Index" class="btn btn-light" button style='font-size:18px;'>Takaisin listaan<i class='fas fa-cat' ></i></a>
+                <br/>
+            </p>
+        </div>
+        <br/>
     </div>
-
 </section>
 
 

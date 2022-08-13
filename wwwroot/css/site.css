@@ -10,9 +10,10 @@ a.navbar-brand {
 body {
     background: url( https://img.freepik.com/free-vector/abstract-soft-brown-hand-painted-watercolor-pastel-background_1055-14336.jpg?w=900&t=st=1658947107~exp=1658947707~hmac=838a368b764708b837aeb9453307198969d33ef98f9287b10bbfea41f28f1b8c) no-repeat center center fixed;
     background-size: cover;
+    opacity: 80;
 }
 .jumbotron {
-    background-color: floralwhite;
+    background-color: papayawhip;
     /*opacity: 70%;*/
     font-family: "Montserrat";
     font-size: large;
@@ -28,22 +29,20 @@ body {
 .container-fluid {
     width: 100%;
     height: auto;
-    background-color: floralwhite;
+    background-color: papayawhip;
     border-radius: 0.3rem;
-    
 }
 
+
 .material-icons {
-    color: peachpuff;
-    background-color: rosybrown;
-    border-radius: 0.9rem;
+    color: gray;
+    background-color: papayawhip;
 }
 
 table {
     table-layout: fixed;
     width: fit-content;
-    border: 3px solid floralwhite;
-    
+    border: 3px solid papayawhip;
 }
 
 .form-control {
@@ -58,7 +57,7 @@ table {
 }
 
 div.carousel-caption {
-    background-color: floralwhite;
+    background-color: #f5ebda;
     position: center;
     text-align: center;
     font-family: "Montserrat";
@@ -94,17 +93,48 @@ th {
 }
 
 .btn-primary {
-    background-color: rosybrown !important;
-   
+    color: #fff;
+    background-color: cornflowerblue !important;
+    border-color: cornflowerblue !important;
 }
 
+    .btn-primary:hover {
+        color: #fff;
+        background-color: lightgray !important;
+        border-color: lightgray !important;
+    }
 .btn-danger {
-    background-color: lightcoral !important;
+    background-color: salmon !important;
+    border-color: salmon !important;
 }
+
+    .btn-danger:hover {
+        background-color: lightsalmon !important;
+        border-color: lightsalmon !important;
+    }
 .btn-light {
     font-size: 18px;
-    background-color: peachpuff;
+    color: #343338;
+    background-color: peachpuff !important;
+    border-color: peachpuff !important;
 }
+    .btn-light:hover {
+        background-color: #ebd3b7 !important;
+        border-color: #ebd3b7 !important;
+    }
+.btn-alert {
+    font-size: 18px;
+    color: #343338;
+    background-color: ghostwhite !important;
+    border-color: ghostwhite !important;
+}
+
+    .btn-alert:hover {
+        background-color: lightgrey !important;
+        border-color: lightgrey !important;
+    }
+
+
 .footer {
     position: relative;
     bottom: 0;
@@ -146,9 +176,7 @@ html {
     border-bottom: 1px solid #e5e5e5;
 }
 
-.box-shadow {
-    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
+
 
 button.accept-policy {
     font-size: 1rem;
