@@ -4,19 +4,23 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>ToDo</h4>
-    <hr />
+<section class="jumbotron">
+    <div class="text-center">
+        <h1 class="display-4">OPPIMISPÄIVÄKIRJA</h1>
+        <h3><em>Lisää aiheita, kirjoita muistiinpanoja ja seuraa edistymistäsi.</em></h3>
+    </div>
+</section>
+<section class="container-fluid">
+<div class="text-center">
+<div class="col-md-10">
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class = "col-sm-6">
             @Html.DisplayNameFor(model => model.Description)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class = "col-sm-2">
+        </ dd>
+        <dt class = "col-sm-6">
             @Html.DisplayNameFor(model => model.IsDone)
         </dt>
         <dd class = "col-sm-10">
@@ -26,11 +30,15 @@
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id"><i class="material-icons">&#xe3c9;</i></a> |
+</div>
+</div>
     <div class="page-item">
         <p>
-            <a asp-action="Index" class="btn btn-light" >Takaisin listaan<i class='fas fa-cat'></i></a>
+            <a asp-action="Index" class="btn btn-light" button style="font-size:18px">Takaisin listaan<i class='fas fa-cat'></i></a>
             <br/>
         </p>
     </div>
     <br/>
-</div>
+    </div>
+    </div>
+</section>

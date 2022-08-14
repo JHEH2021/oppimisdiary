@@ -28,12 +28,12 @@ namespace Oppimispäiväkirja_versio1.Migrations
                     b.Property<string>("NoteText")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TopicId")
+                    b.Property<int>("Topic")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TopicId");
+                    b.HasIndex("Topic");
 
                     b.ToTable("Note");
                 });
@@ -94,9 +94,11 @@ namespace Oppimispäiväkirja_versio1.Migrations
 
             modelBuilder.Entity("Oppimispäiväkirja_versio1.Models.Note", b =>
                 {
-                    b.HasOne("Oppimispäiväkirja_versio1.Models.Topic", "Topic")
+                    b.HasOne("Oppimispäiväkirja_versio1.Models.Topic", "Topics")
                         .WithMany()
-                        .HasForeignKey("TopicId");
+                        .HasForeignKey("Topic")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

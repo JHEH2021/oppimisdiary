@@ -25,6 +25,7 @@ namespace Oppimispäiväkirja_versio1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            //services.AddAuthentication(); jos haluaisi rakentaa tänne jonkun login pagen esim. 
 
             services.AddDbContext<Oppimispäiväkirja_versio1Context>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("Oppimispäiväkirja_versio1Context")));

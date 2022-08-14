@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Oppimispäiväkirja_versio1.Models;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Oppimispäiväkirja_versio1.Controllers
 {
@@ -45,9 +46,18 @@ namespace Oppimispäiväkirja_versio1.Controllers
         }
 
         // GET: Notes/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            return View();
+            ViewModels uusiModels = new ViewModels();
+            uusiModels.Topics = await _context.Topic.ToListAsync();
+            //IEnumerable<SelectListItem> titletListaan = _context.Topic.Select(x => new SelectListItem()
+            //{
+            //    Value = x.Title,
+            //    Text = x.Title
+
+            //});
+           //ViewBag.GetType();
+            return View(uusiModels);
         }
 
         // POST: Notes/Create
@@ -55,7 +65,7 @@ namespace Oppimispäiväkirja_versio1.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TopicId,NoteText")] Note note)
+        public async Task<IActionResult> Create([Bind("Id,TopicId,NoteText")] ViewModels note) //nyt tää ei enää toimi, eli tämä pitää korjata, jotta se sitten tallentuu ihan oikein sinne databaseen jne. 
         {
             if (ModelState.IsValid)
             {

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Oppimispäiväkirja_versio1.Migrations
 {
     [DbContext(typeof(Oppimispäiväkirja_versio1Context))]
-    [Migration("20220726124726_initial")]
+    [Migration("20220814084823_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -19,6 +19,44 @@ namespace Oppimispäiväkirja_versio1.Migrations
                 .HasAnnotation("ProductVersion", "3.1.25")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("Oppimispäiväkirja_versio1.Models.Note", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("NoteText")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Topic")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Topic");
+
+                    b.ToTable("Note");
+                });
+
+            modelBuilder.Entity("Oppimispäiväkirja_versio1.Models.ToDo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDone")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ToDo");
+                });
 
             modelBuilder.Entity("Oppimispäiväkirja_versio1.Models.Topic", b =>
                 {
@@ -36,7 +74,7 @@ namespace Oppimispäiväkirja_versio1.Migrations
                     b.Property<double?>("EstimatedTimeToMaster")
                         .HasColumnType("float");
 
-                    b.Property<bool?>("InProgress")
+                    b.Property<bool>("InProgress")
                         .HasColumnType("bit");
 
                     b.Property<string>("Source")
@@ -54,6 +92,15 @@ namespace Oppimispäiväkirja_versio1.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Topic");
+                });
+
+            modelBuilder.Entity("Oppimispäiväkirja_versio1.Models.Note", b =>
+                {
+                    b.HasOne("Oppimispäiväkirja_versio1.Models.Topic", "Topics")
+                        .WithMany()
+                        .HasForeignKey("Topic")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
