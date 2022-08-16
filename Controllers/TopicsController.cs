@@ -26,16 +26,16 @@ namespace Oppimispäiväkirja_versio1.Controllers
             return View(await _context.Topic.ToListAsync());
         }
 
-        public async Task<IActionResult> Index(string hakusana)
-        {
-            var topics = await _context.Topic.ToListAsync();
-            if (!String.IsNullOrEmpty(hakusana))
-            {
-                topics = topics.Where(topic => topic.Title.Contains(hakusana)).ToList();
-            }
+        //public async Task<IActionResult> Index(string hakusana)
+        //{
+        //    var topics = await _context.Topic.ToListAsync();
+        //    if (!String.IsNullOrEmpty(hakusana))
+        //    {
+        //        topics = topics.Where(topic => topic.Title.Contains(hakusana)).ToList();
+        //    }
 
-            return View(topics);
-        }
+        //    return View(topics);
+        //}
 
         //public ActionResult IndexSearch(string searchString)
         //{

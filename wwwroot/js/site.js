@@ -6,10 +6,9 @@
 var deleteButton = document.getElementById("delete");
 
 function confirmDelete() {
-    deleteButton.addEventlistener("submit",
-        (event) => {
+    deleteButton.addEventlistener("submit", (event) => {
             event.preventDefault();
-            var choice = confirm("Are you sure you want to delete the complete Topic?");
+            var choice = confirm("Oletko varma, että haluat poistaa tämän?");
             if (choice) {
                 deleteButton.submit();
             }
@@ -17,7 +16,7 @@ function confirmDelete() {
         });
 }
 
-
+//TÄMÄ TOIMI IHAN HIENOSTI MONTA VIIKKOA, MUTTA NYT MENI RIKKKI!! 
 
 
 function changeBackground(id, color) {
