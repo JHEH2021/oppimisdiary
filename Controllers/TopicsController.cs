@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.EntityFrameworkCore;
 using Oppimispäiväkirja_versio1.Models;
 
@@ -23,6 +24,17 @@ namespace Oppimispäiväkirja_versio1.Controllers
         {
             
             return View(await _context.Topic.ToListAsync());
+        }
+
+        public async Task<IActionResult> Index(string hakusana)
+        {
+            var topics = await _context.Topic.ToListAsync();
+            if (!String.IsNullOrEmpty(hakusana))
+            {
+                topics = topics.Where(topic => topic.Title.Contains(hakusana)).ToList();
+            }
+
+            return View(topics);
         }
 
         //public ActionResult IndexSearch(string searchString)
