@@ -15,15 +15,17 @@
             <div class="col-md-4">
                 <form asp-action="Edit">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <input type="hidden" asp-for="Id" />
+                    <input type="hidden" asp-for="NoteId"/>
                     <div class="form-group">
                         <label asp-for="Topic" class="control-label">Otsikko:</label>
-                        <input asp-for="Topic" class="form-control" />
+                        <input asp-for="Topic" class="form-control"  id="munId4" onmouseover="changeBackground(this.id, 'lightgray');"
+                               onmouseout="changeBackground(this.id, 'white');"/>
                         <span asp-validation-for="Topic" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="NoteText" class="control-label">Muistiinpano:</label>
-                        <input asp-for="NoteText" class="form-control" />
+                        <input asp-for="NoteText" class="form-control"  id="munId5" onmouseover="changeBackground(this.id, 'lightgray');"
+                               onmouseout="changeBackground(this.id, 'white');" />
                         <span asp-validation-for="NoteText" class="text-danger"></span>
                     </div>
                     <div class="form-group">

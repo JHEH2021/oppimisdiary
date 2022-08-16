@@ -25,30 +25,30 @@ namespace Oppimispäiväkirja_versio1.Controllers
             return View(await _context.Topic.ToListAsync());
         }
 
-        public ActionResult IndexSearch(string searchString)
-        {
-            var title = from m in _context.Topic
-                         select m;
+        //public ActionResult IndexSearch(string searchString)
+        //{
+        //    var title = from m in _context.Topic
+        //                 select m;
 
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                title = title.Where(s => s.Title.Contains(searchString));
-            }
+        //    if (!String.IsNullOrEmpty(searchString))
+        //    {
+        //        title = title.Where(s => s.Title.Contains(searchString));
+        //    }
 
-            return View(title);
-        }
+        //    return View(title);
+        //}
         
 
         // GET: Topics/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int? Id)
         {
-            if (id == null)
+            if (Id == null)
             {
                 return NotFound();
             }
 
             var topic = await _context.Topic
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.Id == Id);
             if (topic == null)
             {
                 return NotFound();
@@ -57,21 +57,6 @@ namespace Oppimispäiväkirja_versio1.Controllers
 
             return View(topic);
         }
-
-
-        //public async Task<IActionResult> Search(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var topic = await from t in _context.Topic
-        //                where t.Title.Contains(userInput)
-        //                select t;
-        //    return Json(topic.ToList());
-        //}
-   
 
 
         // GET: Topics/Create
@@ -85,7 +70,7 @@ namespace Oppimispäiväkirja_versio1.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Description,EstimatedTimeToMaster,TimeSpent,Source,StartLearningDate,InProgress,CompletionDate")] Topic topic)
+        public async Task<IActionResult> Create([Bind("ID,Title,Description,EstimatedTimeToMaster,TimeSpent,Source,StartLearningDate,InProgress,CompletionDate")] Topic topic)
         {
             if (ModelState.IsValid)
             {
@@ -97,14 +82,14 @@ namespace Oppimispäiväkirja_versio1.Controllers
         }
 
         // GET: Topics/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int? Id)
         {
-            if (id == null)
+            if (Id == null)
             {
                 return NotFound();
             }
 
-            var topic = await _context.Topic.FindAsync(id);
+            var topic = await _context.Topic.FindAsync(Id);
             if (topic == null)
             {
                 return NotFound();
@@ -131,9 +116,9 @@ namespace Oppimispäiväkirja_versio1.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,EstimatedTimeToMaster,TimeSpent,Source,StartLearningDate,InProgress,CompletionDate")] Topic topic)
+        public async Task<IActionResult> Edit(int Id, [Bind("Id,Title,Description,EstimatedTimeToMaster,TimeSpent,Source,StartLearningDate,InProgress,CompletionDate")] Topic topic)
         {
-            if (id != topic.Id)
+            if (Id != topic.Id)
             {
                 return NotFound();
             }
@@ -162,15 +147,15 @@ namespace Oppimispäiväkirja_versio1.Controllers
         }
 
         // GET: Topics/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? Id)
         {
-            if (id == null)
+            if (Id == null)
             {
                 return NotFound();
             }
 
             var topic = await _context.Topic
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.Id == Id);
             if (topic == null)
             {
                 return NotFound();
@@ -182,17 +167,17 @@ namespace Oppimispäiväkirja_versio1.Controllers
         // POST: Topics/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(int Id)
         {
-            var topic = await _context.Topic.FindAsync(id);
+            var topic = await _context.Topic.FindAsync(Id);
             _context.Topic.Remove(topic);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool TopicExists(int id)
+        private bool TopicExists(int Id)
         {
-            return _context.Topic.Any(e => e.Id == id);
+            return _context.Topic.Any(e => e.Id == Id);
         }
     }
 }

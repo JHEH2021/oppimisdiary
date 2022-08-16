@@ -4,41 +4,45 @@
     ViewData["Title"] = "Details";
 }
 
-<section class="jumbotron">
-    <div class="text-center">
-        <h1 class="display-4">OPPIMISPÄIVÄKIRJA</h1>
-        <h3><em>Lisää aiheita, kirjoita muistiinpanoja ja seuraa edistymistäsi.</em></h3>
-    </div>
-</section>
 <section class="container-fluid">
-<div class="text-center">
-<div class="col-md-10">
-    <dl class="row">
-        <dt class = "col-sm-6">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </ dd>
-        <dt class = "col-sm-6">
-            @Html.DisplayNameFor(model => model.IsDone)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IsDone)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id"><i class="material-icons">&#xe3c9;</i></a> |
-</div>
-</div>
-    <div class="page-item">
-        <p>
-            <a asp-action="Index" class="btn btn-light" button style="font-size:18px">Takaisin listaan<i class='fas fa-cat'></i></a>
-            <br/>
-        </p>
-    </div>
-    <br/>
-    </div>
+    <div class="text-center">
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.Description)*@
+                            Tehtävä
+                        </th>
+                    
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.IsDone)*@
+                            Valmis
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => model.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.IsDone)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <div>
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Muokkaa</a>
+                <div><br /></div>
+                <p>
+                    <a asp-action="Index" class="btn btn-light" button style="font-size:18px;">Takaisin listaan<i class='fas fa-cat'></i></a>
+                    <br />
+                </p>
+            </div>
+            <br />
+        </div>
     </div>
 </section>

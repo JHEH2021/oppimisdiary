@@ -20,12 +20,15 @@
                             <form asp-action="Create">
                                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                                 <div class="form-group">
-                                    <label asp-for="Description" class="control-label">Uusi aihe</label>
-                                    <input asp-for="Description" class="form-control" />
+                                    <br/>
+                                    <label asp-for="Description" class="control-label"><strong>Uusi tehtävä</strong></label>
+                                    <input asp-for="Description" class="form-control" id="munId1" onmouseover="changeBackground(this.id, 'lightgray');"
+                                           onmouseout="changeBackground(this.id, 'white');"/>
                                     <span asp-validation-for="Description" class="text-danger"></span>
                                 </div>
                                 <div class="form-group form-check">
-                                    <input class="form-check-input" asp-for="IsDone" /><label asp-for="IsDone" class="control-label">Tehtävä valmis</label>
+                                    <input class="form-check-input" asp-for="IsDone" /><label asp-for="IsDone" class="control-label"  id="munId2" onmouseover="changeBackground(this.id, 'lightgray');"
+                                                                                              onmouseout="changeBackground(this.id, 'white');">Tehtävä valmis</label>
                                     <span asp-validation-for="IsDone" class="text-danger"></span>
                                 </div>
                                     <div class="form-group">

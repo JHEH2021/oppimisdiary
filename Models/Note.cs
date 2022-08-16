@@ -12,7 +12,7 @@ namespace Oppimispäiväkirja_versio1.Models
     public class Note 
     {
         [Key]
-        public int Id { get; set; }
+        public int NoteId { get; set; }
         public string NoteText { get; set; }
         public virtual int Topic { get; set;  }
         [ForeignKey("Topic")]
